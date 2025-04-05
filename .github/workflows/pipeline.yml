@@ -30,3 +30,14 @@ jobs:
       run: |
         docker tag my-image-name:latest lesliearjona/my-image-name:latest
         docker push lesliearjona/my-image-name:latest
+
+    - name: Run tests
+      run: |
+          pytest tests/
+
+    - name: Deploy to remote server
+      run: |
+        ssh user@your-server-ip "docker pull lesliearjona/my-image-name:latest && docker stop my-app || true && docker run -d --name my-app -p 80:80 lesliearjona/my-image-name:latest"
+        
+        
+      
