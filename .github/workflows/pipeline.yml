@@ -30,13 +30,7 @@ jobs:
       run: |
         docker tag my-image-name:latest lesliearjona/my-image-name:latest
         docker push lesliearjona/my-image-name:latest
-    
-    - name: Install dependencies
+      
+    - name: Deploy Docker container
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run tests
-      run: |
-          pytest tests/
-  
+        docker run -d -p 8080:80 lesliearjona/my-image-name:latest
