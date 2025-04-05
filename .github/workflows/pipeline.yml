@@ -28,5 +28,5 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker tag my-image-name:latest username/my-image-name:latest
+        docker tag my-image-name:latest lesliearjona/my-image-name:latest
         docker push username/my-image-name:latest
