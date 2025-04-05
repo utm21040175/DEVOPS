@@ -30,3 +30,8 @@ jobs:
       run: |
         docker tag my-image-name:latest lesliearjona/my-image-name:latest
         docker push lesliearjona/my-image-name:latest
+        
+    - name: Run tests
+      run: |
+            pytest tests/
+  
